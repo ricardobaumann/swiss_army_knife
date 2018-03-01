@@ -1,0 +1,6 @@
+#!/bin/sh
+current_branch=`git rev-parse --abbrev-ref HEAD`
+git add -A . && git commit
+git pull --rebase origin master
+git push mine ${current_branch}
+hub pull-request -h "${current_branch}"

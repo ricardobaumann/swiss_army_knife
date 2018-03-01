@@ -1,0 +1,5 @@
+#!/bin/sh
+current_branch=`git rev-parse --abbrev-ref HEAD`
+git add -A . && git commit
+git pull --rebase origin master
+git push -f mine ${current_branch}
